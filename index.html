@@ -1,0 +1,220 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>太好乐数据分析</title>
+    <link rel="stylesheet" href="css/common.css">
+    <link rel="stylesheet" href="css/rolldate.css">
+    <link rel="stylesheet" href="css/index.css">
+
+    <script src="js/rem.js"></script>
+    <script src="js/jquery-3.3.1.min.js"></script>
+    <script src="js/index.js"></script>
+    <script src="js/echarts.min.js"></script>
+    <script src="js/rolldate.min.js"></script>
+</head>
+<body>
+<div class="head"></div>
+    <div id="main" style="width: 100%;height: 200px;"></div>
+    <div id="min" style="width: 100%;height: 300px;"></div>
+    <div id="mains" style="width: 100%;height: 600px;"></div>
+
+<input readonly type="text" id="date" placeholder="YY-MM-DD" />
+
+</body>
+</html>
+<script>
+    let myChartss = echarts.init(document.getElementById('min'));
+    option = {
+        title: {
+            text: '全国',
+        },
+        tooltip: {
+            trigger: 'axis',
+            axisPointer: {
+                type: 'shadow'
+            }
+        },
+        legend: {
+            data: ['2018年']
+        },
+        grid: {
+            left: '3%',
+            right: '10%',
+            bottom: '3%',
+            containLabel: true
+        },
+        xAxis: {
+            show:false,
+            type: 'value',
+            boundaryGap: [0, 0.01]
+        },
+        yAxis: {
+            type: 'category',
+            data: ['北京省','湖南省','陕西省','广东省','湖北省','山西省','北京省','湖南省','陕西省','广东省','湖北省'],
+            axisTick: {
+                show: false,
+            },
+            axisLabel: {
+                show: true,
+                textStyle: {
+                    fontSize : 8
+                }
+            },
+
+        },
+        series: [
+            {
+                name: '2018年',
+                type: 'bar',
+                data: [19325, 23438, 31000, 121594, 134141,19325, 23438, 31000, 121594, 134141, 681807],
+                itemStyle:{
+                    normal:{
+                        color:'#31A4F7',
+                        label: {
+                            show: true,
+                            position: 'right',
+                            textStyle: {
+                                color: 'black',
+                                fontSize: 10
+                            }
+                        }
+                    }
+                }
+            }
+        ]
+    };
+
+    myChartss.setOption(option);
+</script>
+<script>
+    let myCharts = echarts.init(document.getElementById('main'));
+    option = {
+        xAxis: {
+
+            type: 'category',
+            data: ['Monss', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Friss'],
+            axisLine: {
+                show: false,
+
+
+            },
+            axisTick: {
+                show: false
+            },
+            axisLabel: {
+                interval: 0,//横轴信息全部显示
+                rotate: 40,//角度倾斜显示
+                textStyle: {
+                    color: '#ccc',
+                    fontSize: ".1rem"
+
+                }
+            },
+            z: 10
+        },
+        yAxis: {
+            show: false,
+            type: 'value'
+        },
+        dataZoom: [
+            {
+                show: false,
+                realtime: true,
+                start: 0,
+                end: 90
+            },
+            {
+                type: 'inside',
+                realtime: true,
+                start: 0,
+                end: 90
+            }
+        ],
+        series: [{
+            data: [10, 20, 30, 40, 50, 60, 70, 80, 90, 100, 90, 10, 20, 50, 40, 30, 100, 80, 90],
+            type: 'bar',
+            itemStyle: {
+                emphasis: {
+                    barBorderRadius: 50
+
+                },
+                normal: {
+
+                    marginRight: 50,
+                    color: 'rgba(254,159,105,1)',
+                    label: {show: true, position: 'top'}
+
+
+                }
+            }
+
+        }]
+    };
+    myCharts.setOption(option);
+</script>
+<script>
+    let myChartsss = echarts.init(document.getElementById('mains'));
+    option = {
+        tooltip: {
+            trigger: 'item',
+            formatter: "{a} <br/>{b}: {c} ({d}%)"
+        },
+        legend: {
+            orient: 'vertical',
+            // top: 'middle',
+            bottom: 130,
+            left: 'center',
+            data: ['直接访问', '邮件营销', '联盟广告', '视频广告', '搜索引擎', 'a邮件营销', 's联盟广告'],
+            icon: "circle",
+
+            itemWidth: 10, // 设置宽度
+
+            itemHeight: 10, // 设置高度
+        },
+        series: [
+            {
+                name: '访问来源',
+                type: 'pie',
+
+                center: ['50%', '20%'],
+                radius: ['20%', '50%'],
+                avoidLabelOverlap: false,
+
+                label: {
+
+                    normal: {
+                        show: false,
+                        position: 'center'
+                    },
+                    emphasis: {
+                        show: false,
+                        textStyle: {
+                            fontSize: '30',
+                            fontWeight: 'bold'
+                        }
+                    }
+                },
+                labelLine: {
+                    normal: {
+                        show: false
+                    }
+                },
+                data: [
+                    {value: 47, name: '直接访问'},
+                    {value: 3, name: '邮件营销'},
+                    {value: 3, name: '联盟广告'},
+                    {value: 1, name: '视频广告'},
+                    {value: 1, name: '搜索引擎'},
+                    {value: 27, name: 'a邮件营销'},
+                    {value: 17, name: 's联盟广告'},
+
+                ]
+            }
+        ]
+    };
+    myChartsss.setOption(option);
+</script>

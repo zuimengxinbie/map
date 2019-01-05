@@ -1,0 +1,70 @@
+@charset "utf-8";
+	
+/* CSS Document */
+/*公共部分*/
+body {
+	background: #fff;
+	 -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+	 -webkit-touch-callout:none;
+	 }
+html{-webkit-tap-hightlight-color:rgba(255,255,255,0);
+	-webkit-text-size-adjust:none;
+	font-size:20px;
+	-line-height:1.5;
+	font-family:'微软雅黑';
+	}
+ol,ul {list-style:none;
+	} 
+body,p,blockquote,ul,ol,li,h1,h2,h3,h4,h5,h6,dl,dd,input,textarea,button{margin:0;
+	 padding:0;
+	}
+h1, h2, h3, h4, h5,em,i { font-weight:normal}
+em,i{ font-style: normal;
+	 }
+img{border: 0;
+	
+	vertical-align: middle}
+a {text-decoration: none;
+	 color: #252525;
+	 outline:none}
+input,select,textarea{-font-size:100%;
+	border:0;
+	outline: none;
+	 -webkit-appearance:none;
+	 resize:none;
+	}
+html,body{ -height:100%;
+	 width:100%;
+	overflow-x:hidden;
+	}
+[v-cloak]{
+	display: none;
+}
+
+/*没有数据*/
+.nojg {
+	padding-top: 0.8rem;
+	text-align: center;
+	display: none;
+}
+.nojg h2 {
+	width: 3rem;
+	height: 3rem;
+	background:url('../images/ino.png') 0 0 no-repeat;
+	background-size: contain;
+	margin: 0 auto;
+}
+.nojg h3 {
+	font-size: 0.3rem;
+	color:#999999;
+	margin-top:0.62rem;
+}
+.nojg .btn_sub {
+	width: 3.6rem;
+	height: 0.72rem;
+	line-height: 0.72rem;
+	font-size: 0.3rem;
+	color: #ffffff;
+	margin: 0.3rem auto;
+}
+
